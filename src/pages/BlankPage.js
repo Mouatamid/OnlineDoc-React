@@ -5,7 +5,7 @@ function BlankPage() {
     return (
         <div>
             <Breadcrumb title="Blank Page"/>
-            <div className="content" style={{height: "1000px"}}>
+            <div className="content">
 				<div className="container-fluid">
 					<div className="row">
 						<div className="col-12">
