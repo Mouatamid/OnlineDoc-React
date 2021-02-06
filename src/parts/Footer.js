@@ -10,7 +10,7 @@ function Footer() {
                     <div className="copyright">
                         <div className="row">
                             <div className="footer-logo col-sm-6 col-md-6 col-lg-6">
-                                <img src={logo} alt="logo" />
+                                <img src={logo} alt="logo" style={{width: "100px"}} />
                             </div>
                             <div className="copyright-text-container col-sm-6 col-md-6 col-lg-6">
                                 <div className="copyright-text">
