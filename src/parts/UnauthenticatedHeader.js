@@ -35,12 +35,12 @@ function UnauthenticatedHeader({subMenuClickHandler, setCloseAction}) {
 						<li>
 							<Link to="/blank" onClick={() => setCloseAction(true)}>Blank</Link>
 						</li>
-						<li className="has-submenu">
+						{/*<li className="has-submenu">
 							<Link to="#" onClick={(elm) => subMenuClickHandler(elm)}>Doctors <i className="fas fa-chevron-down"></i></Link>
 							<ul className="submenu">
 								<li><Link to="/dashboard" onClick={() => setCloseAction(true)}>Dashboard</Link></li>
 							</ul>
-						</li>
+						</li>*/}
 						<li className="login-link">
 							<Link to="/login" onClick={() => setCloseAction(true)}>Login / Signup</Link>
 						</li>

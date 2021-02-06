@@ -38,7 +38,7 @@ export default function Header({authenticated, setAuthenticated}) {
                     Authorization: 'Bearer ' + token
                 }
             };
-            axios.post(url, null, config)
+            axios.get(url, config)
                 .then(response => {
                     setAuth(true);
                 })

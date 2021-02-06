@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/img/logo.png'
-import doctorThumb from '../assets/img/doctor-thumb-02.jpg';
 
 function AuthenticatedHeader({subMenuClickHandler, setCloseAction, setAuthenticated}) {
 	const [logoutClick, setLogoutClick] = useState(false);
@@ -59,13 +58,13 @@ function AuthenticatedHeader({subMenuClickHandler, setCloseAction, setAuthentica
 					<li className="nav-item dropdown has-arrow logged-item">
 						<Link to="#" className="dropdown-toggle nav-link" data-toggle="dropdown">
 							<span className="user-img">
-								<img className="rounded-circle" src={doctorThumb} width="31" alt="Darren Elder" />
+								<img className="rounded-circle" src={require("../assets/img/doctors/doctor-thumb-02.jpg").default} width="31" alt="Darren Elder" />
 							</span>
 						</Link>
 						<div className="dropdown-menu dropdown-menu-right">
 							<div className="user-header">
 								<div className="avatar avatar-sm">
-									<img src={doctorThumb} alt="Doctor" className="avatar-img rounded-circle" />
+									<img src={require("../assets/img/doctors/doctor-thumb-02.jpg").default} alt="Doctor" className="avatar-img rounded-circle" />
 								</div>
 								<div className="user-text">
 									<h6>Darren Elder</h6>
