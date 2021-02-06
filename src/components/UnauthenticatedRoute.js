@@ -17,7 +17,7 @@ function UnauthenticatedRoute({children, ...rest}) {
                     Authorization: 'Bearer ' + token
                 }
             };
-            axios.post(url, null, config)
+            axios.get(url, config)
                 .then(response => {
                     setAuth(true);
                 })
