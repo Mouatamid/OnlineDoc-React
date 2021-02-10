@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import Header from './parts/Header';
 import Home from './pages/Home';
@@ -10,31 +10,23 @@ import AuthenticatedRoute from './components/AuthenticatedRoute';
 import UnauthenticatedRoute from './components/UnauthenticatedRoute';
 import { Main } from './assets/js/styles';
 import MessageHub from './components/MessageHub';
+import axios from 'axios';
+import Modal from './components/Modal';
 
 function App() {
   const ref = useRef(null);
   const [authenticated, setAuthenticated] = useState(false);
+  const [modal, setModal] = useState({
+    id: "test",
+    title: "test",
+    body: <div></div>,
+    footer: <div></div>
+  })
 
-  // const resizeInnerDiv = () => {
-  //   var height = $(window).height();	
-  //   var header_height = $(".header").height();
-  //   var footer_height = $(".footer").height();
-  //   var setheight = height - header_height;
-  //   var trueheight = setheight - footer_height;
-  //   $(".page-container").css("min-height", trueheight);
-  // }
-
-  // useEffect(() => {
-  //     if($('.page-container').length > 0){
-  //         resizeInnerDiv();
-  //     }
-
-  //     $(window).resize(function(){
-  //         if($('.page-container').length > 0 ){
-  //             resizeInnerDiv();
-  //         }
-  //     });
-  // })
+  useEffect(() => {
+    const jwtToken = localStorage.getItem("token") ?? "";
+    axios.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`;
+  }, [authenticated])
 
   return (
     <Main>
@@ -54,15 +46,39 @@ function App() {
                 <Login setAuthenticated = {(e) => setAuthenticated(e)} PushNotifRef={ref} />
               </UnauthenticatedRoute>
               <AuthenticatedRoute path="/dashboard">
-                <Dashboard setAuthenticated={(e) => setAuthenticated(e)} PushNotifRef={ref} />
+                <Dashboard setAuthenticated={(e) => setAuthenticated(e)} PushNotifRef={ref} setModal={setModal} />
               </AuthenticatedRoute>
             </Switch>
           </div>
           {/*<Footer />*/}
         </Router>
       </div>
+      <Modal content={modal} />
     </Main>
   );
 }
 
 export default App;
+
+
+
+// const resizeInnerDiv = () => {
+  //   var height = $(window).height();	
+  //   var header_height = $(".header").height();
+  //   var footer_height = $(".footer").height();
+  //   var setheight = height - header_height;
+  //   var trueheight = setheight - footer_height;
+  //   $(".page-container").css("min-height", trueheight);
+  // }
+
+  // useEffect(() => {
+  //     if($('.page-container').length > 0){
+  //         resizeInnerDiv();
+  //     }
+
+  //     $(window).resize(function(){
+  //         if($('.page-container').length > 0 ){
+  //             resizeInnerDiv();
+  //         }
+  //     });
+  // })
