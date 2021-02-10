@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import $ from 'jquery';
 import RegisterFormLoginInfo from './register/RegisterFormLoginInfo';
@@ -29,7 +29,6 @@ const validators = [
 ]
 
 function RegisterForm({setLoginForm, PushNotifRef}) {
-    const history = useHistory();
     const formsCount = forms.length-1;
     const [currentForm, setCurrentForm] = useState(0);
     const [submitForm, setSubmitForm] = useState(false);

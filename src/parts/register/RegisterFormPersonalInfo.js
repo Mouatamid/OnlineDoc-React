@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { map } from 'jquery';
 import React, { useEffect, useState } from 'react'
 
 function RegisterFormPersonalInfo({formData, setFormData, errorMessages}) {
