@@ -7,7 +7,6 @@ export default function StatisticsWidget() {
     const [totalPatients, setTotalPatients] = useState(0);
     const [todayPatients, setTodayPatients] = useState(0);
     const [totalAppointments, setTotalAppointments] = useState(0);
-    let totalPatientsImg = <div></div>;
 
     const animateElements = () => {
 		$('.circle-bar1').each((_,e) => {
@@ -97,7 +96,7 @@ export default function StatisticsWidget() {
         if($('.circle-bar').length > 0) {
             animateElements();
         }
-        $(window).scroll(animateElements);
+        //$(window).scroll(animateElements);
     })
 
     return (

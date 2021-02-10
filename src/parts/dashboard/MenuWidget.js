@@ -1,53 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
-import StatisticsWidget from './StatisticsWidget';
-import TodayAppointments from './TodayAppointments';
-import Calendar from './Calendar';
 
-function MenuWidget({doctor, setAuthenticated, setDashboardContent}) {
-    const [currentMenuItem, setCurrentMenu] = useState("dashboard-menu-item");
-    const [currentSection, setCurrentSection] = useState();
-
+function MenuWidget({handleMenuItemClick, setAuthenticated}) {
     const logout = () => {
 		localStorage.removeItem("token");
 		setAuthenticated(false);
     }
-
-    const handleMenuItemClick = (id) => {
-        document.getElementById(currentMenuItem).classList.remove("active");
-        document.getElementById(id).classList.add("active");
-        setCurrentMenu(id);
-
-        if(id === "dashboard-menu-item"){
-            setCurrentSection(
-                <div className="col-md-7 col-lg-8 col-xl-9">
-                    <StatisticsWidget />
-                    <TodayAppointments doctor={doctor} />
-                </div>);
-        }
-        
-        if(id === "schedule-sessions-menu-item"){
-            setCurrentSection(
-                <div className="col-md-7 col-lg-8 col-xl-9">
-                    <Calendar />
-                </div>
-            )
-        }
-    }
-
-    useEffect(() => {
-        if(currentMenuItem === "dashboard-menu-item"){
-            setCurrentSection(
-                <div className="col-md-7 col-lg-8 col-xl-9">
-                    <StatisticsWidget />
-                    <TodayAppointments doctor={doctor} />
-                </div>);
-        }
-    }, [doctor])
-
-    useEffect(() => {
-        setDashboardContent(currentSection);
-    }, [currentSection])
     
     return (
         <div className="dashboard-widget">
@@ -59,8 +17,8 @@ function MenuWidget({doctor, setAuthenticated, setDashboardContent}) {
                             <span>Dashboard</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to="appointments.html">
+                    <li id="appointments-menu-item" onClick={() => handleMenuItemClick("appointments-menu-item")}>
+                        <Link to="/dashboard">
                             <i className="fas fa-calendar-check"></i>
                             <span>Appointments</span>
                         </Link>
