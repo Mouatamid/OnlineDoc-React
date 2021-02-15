@@ -63,7 +63,7 @@ function AppointmentWidget({appointmentID}) {
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
                                 End Time
-                                <span className="badge badge-pill" style={{fontSize: "12px"}}>{moment(appointment.heureDebut, "HH:mm:ss").format("HH:mm")}</span>
+                                <span className="badge badge-pill" style={{fontSize: "12px"}}>{moment(appointment.heureFin, "HH:mm:ss").format("HH:mm")}</span>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
                                 Price Rate
