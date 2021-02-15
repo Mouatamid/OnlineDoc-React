@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/img/logo.png'
+import logo from '../../assets/img/logo.png'
 
-function UnauthenticatedHeader({subMenuClickHandler, setCloseAction}) {
+function UnauthenticatedHeader({setCloseAction}) {
 
     return (
         <header className="header">
@@ -29,18 +29,6 @@ function UnauthenticatedHeader({subMenuClickHandler, setCloseAction}) {
 						</Link>
 					</div>
 					<ul className="main-nav">
-						<li>
-							<Link to="/" onClick={() => setCloseAction(true)}>Home</Link>
-						</li>
-						<li>
-							<Link to="/blank" onClick={() => setCloseAction(true)}>Blank</Link>
-						</li>
-						{/*<li className="has-submenu">
-							<Link to="#" onClick={(elm) => subMenuClickHandler(elm)}>Doctors <i className="fas fa-chevron-down"></i></Link>
-							<ul className="submenu">
-								<li><Link to="/dashboard" onClick={() => setCloseAction(true)}>Dashboard</Link></li>
-							</ul>
-						</li>*/}
 						<li className="login-link">
 							<Link to="/login" onClick={() => setCloseAction(true)}>Login / Signup</Link>
 						</li>

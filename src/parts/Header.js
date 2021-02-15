@@ -3,8 +3,8 @@ import $ from 'jquery';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import logo from '../assets/img/logo.png';
-import AuthenticatedHeader from './AuthenticatedHeader';
-import UnauthenticatedHeader from './UnauthenticatedHeader';
+import AuthenticatedHeader from './header/AuthenticatedHeader';
+import UnauthenticatedHeader from './header/UnauthenticatedHeader';
 
 export default function Header({authenticated, setAuthenticated}) {
 	const [auth, setAuth] = useState(false);

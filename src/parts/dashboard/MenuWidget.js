@@ -23,28 +23,10 @@ function MenuWidget({handleMenuItemClick, setAuthenticated}) {
                             <span>Appointments</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to="my-patients.html">
-                            <i className="fas fa-user-injured"></i>
-                            <span>My Patients</span>
-                        </Link>
-                    </li>
                     <li id="schedule-sessions-menu-item" onClick={() => handleMenuItemClick("schedule-sessions-menu-item")}>
                         <Link to="/dashboard">
                             <i className="fas fa-hourglass-start"></i>
                             <span>Schedule Sessions</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="invoices.html">
-                            <i className="fas fa-file-invoice"></i>
-                            <span>Invoices</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="reviews.html">
-                            <i className="fas fa-star"></i>
-                            <span>Reviews</span>
                         </Link>
                     </li>
                     <li>

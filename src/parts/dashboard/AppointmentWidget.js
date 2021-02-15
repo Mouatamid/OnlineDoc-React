@@ -47,8 +47,8 @@ function AppointmentWidget({appointmentID}) {
             );
             
             setAppointmentInfo(
-                <div className="col-md-7">
-                    patient-profile.html
+                <div className="col-md-7 card-body">
+                    
                 </div>
             );
         }

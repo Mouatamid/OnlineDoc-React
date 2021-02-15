@@ -54,8 +54,8 @@ function Calendar({PushNotifRef, setModal}) {
         const data = {
             id: 0,
             weekday: (parseInt(moment(selectInfo.startStr).format("e"))+6)%7,
-            heure_debut: moment.utc(selectInfo.startStr).format("HH:mm"),
-            heure_fin: moment.utc(selectInfo.endStr).format("HH:mm"),
+            heureDebut: moment.utc(selectInfo.startStr).format("HH:mm"),
+            heureFin: moment.utc(selectInfo.endStr).format("HH:mm"),
             disponible: true
         }
 
@@ -102,8 +102,8 @@ function Calendar({PushNotifRef, setModal}) {
         const data = {
             id: e.event.extendedProps.key,
             weekday: (parseInt(moment(e.event._instance.range.start).format("e"))+6)%7,
-            heure_debut: moment.utc(e.event._instance.range.start).format("HH:mm"),
-            heure_fin: moment.utc(e.event._instance.range.end).format("HH:mm"),
+            heureDebut: moment.utc(e.event._instance.range.start).format("HH:mm"),
+            heureFin: moment.utc(e.event._instance.range.end).format("HH:mm"),
             disponible: true
         }
         
@@ -145,8 +145,8 @@ function Calendar({PushNotifRef, setModal}) {
                             id: createEventId(),
                             key: session.id,
                             description: session.disponible ? "Some description" : "Inactive session", 
-                            start: actual.format("YYYY-MM-DD") + `T${session.heure_debut}`,
-                            end: actual.format("YYYY-MM-DD") + `T${session.heure_fin}`,
+                            start: actual.format("YYYY-MM-DD") + `T${session.heureDebut}`,
+                            end: actual.format("YYYY-MM-DD") + `T${session.heureFin}`,
                             backgroundColor: session.disponible ? "#58A8D7" : "#BACEDA"
                         });
                         actual.add(7, "days");

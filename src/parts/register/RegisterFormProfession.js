@@ -69,8 +69,10 @@ function RegisterFormProfession({formData, setFormData, errorMessages}) {
                     {errorMessages.specialty}
                 </div>
             </div>
-            <div className="form-group">
-                <textarea id="pricing" className="form-control" rows="4" value={localFormData.pricing} onChange={(e) => handleOnChange("pricing", e)} placeholder="Describe appointment pricing"></textarea>
+            <h6 style={{fontSize: "11px"}}>* Price of online sessions only</h6>
+            <div className="form-group form-focus">
+                <input type="number" id="pricing" className="form-control floating" value={localFormData.pricing} onChange={(e) => handleOnChange("pricing", e)} />
+                <label className="focus-label">DH/Hour</label>
                 <div className="invalid-feedback">
                     {errorMessages.pricing}
                 </div>

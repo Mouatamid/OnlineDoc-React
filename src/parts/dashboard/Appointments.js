@@ -23,9 +23,9 @@ function Appointments({doctor, showAppointmentDetails}) {
                         patientFirstname: rdv.patient.prenom,
                         patientLastname: rdv.patient.nom,
                         date: moment(rdv.date, "YYYY-MM-DD"),
-                        startTime: moment(rdv.heure_debut, "HH:mm:ss").format("HH:mm"),
-                        endTime: moment(rdv.heure_fin, "HH:mm:ss").format("HH:mm"),
-                        type: rdv.en_ligne ? "Online" : "In cabinet",
+                        startTime: moment(rdv.heureDebut, "HH:mm:ss").format("HH:mm"),
+                        endTime: moment(rdv.heureFin, "HH:mm:ss").format("HH:mm"),
+                        type: rdv.enLigne ? "Online" : "In cabinet",
                         amount: "400 DH"
                     });
                 });
