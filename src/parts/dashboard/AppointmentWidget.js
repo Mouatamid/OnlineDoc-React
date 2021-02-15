@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import moment from 'moment';
 
 function AppointmentWidget({appointmentID}) {
     const [appointment, setAppointment] = useState({});
@@ -11,6 +12,7 @@ function AppointmentWidget({appointmentID}) {
 
         axios.get(url)
             .then(res => {
+                console.log(res.data);
                 setAppointment(res.data);
             })
             .catch(err => {
@@ -53,19 +55,19 @@ function AppointmentWidget({appointmentID}) {
                         <ul className="list-group" style={{width: "100%"}}>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
                                 Date
-                                <span className="badge badge-pill">Feb 16 2012</span>
+                                <span className="badge badge-pill" style={{fontSize: "12px"}}>{moment(appointment.date, "YYYY-MM-DD").format("DD MMM YYYY")}</span>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
                                 Start Time
-                                <span className="badge badge-pill">14:00</span>
+                                <span className="badge badge-pill" style={{fontSize: "12px"}}>{moment(appointment.heureDebut, "HH:mm:ss").format("HH:mm")}</span>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
                                 End Time
-                                <span className="badge badge-pill">15:00</span>
+                                <span className="badge badge-pill" style={{fontSize: "12px"}}>{moment(appointment.heureDebut, "HH:mm:ss").format("HH:mm")}</span>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
                                 Price Rate
-                                <span className="badge badge-pill">500 DH/Hour</span>
+                                <span className="badge badge-pill" style={{fontSize: "12px"}}>{appointment.medecin.tarif} DH/Hour</span>
                             </li>
                         </ul>
                     </div>
