@@ -5,7 +5,7 @@ import App from './App';
 import './assets/js/script.js';
 import axios from 'axios';
 
-axios.defaults.baseURL = "http://localhost:8082";
+axios.defaults.baseURL = "http://35.224.208.90:8082";
 axios.defaults.headers['Content-Type'] = 'application/json; charset=utf-8';
 axios.defaults.headers['Accept'] = 'application/json; charset=utf-8';
 
