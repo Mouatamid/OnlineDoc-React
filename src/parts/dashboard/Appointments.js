@@ -76,7 +76,7 @@ function Appointments({doctor, showAppointmentDetails}) {
                                                         <tr key={appointment.id}>
                                                             <td>
                                                                 <h2 className="table-avatar">
-                                                                    <img className="avatar avatar-sm mr-2 avatar-img rounded-circle" src={require("../../assets/img/patients/patient6.jpg").default} alt="User" />
+                                                                    <img className="avatar avatar-sm mr-2 avatar-img rounded-circle" src={require("../../assets/img/user.png").default} alt="User" />
                                                                     {appointment.patientLastname} {appointment.patientFirstname}
                                                                 </h2>
                                                             </td>
@@ -122,7 +122,7 @@ function Appointments({doctor, showAppointmentDetails}) {
                                                         <tr key={appointment.id}>
                                                             <td>
                                                                 <h2 className="table-avatar">
-                                                                    <img className="avatar avatar-sm mr-2 avatar-img rounded-circle" src={require("../../assets/img/patients/patient6.jpg").default} alt="User" />
+                                                                    <img className="avatar avatar-sm mr-2 avatar-img rounded-circle" src={require("../../assets/img/user.png").default} alt="User" />
                                                                     {appointment.patientLastname} {appointment.patientFirstname}
                                                                 </h2>
                                                             </td>
@@ -167,7 +167,7 @@ function Appointments({doctor, showAppointmentDetails}) {
                                                         <tr key={appointment.id}>
                                                             <td>
                                                                 <h2 className="table-avatar">
-                                                                    <img className="avatar avatar-sm mr-2 avatar-img rounded-circle" src={require("../../assets/img/patients/patient6.jpg").default} alt="User" />
+                                                                    <img className="avatar avatar-sm mr-2 avatar-img rounded-circle" src={require("../../assets/img/user.png").default} alt="User" />
                                                                     {appointment.patientLastname} {appointment.patientFirstname}
                                                                 </h2>
                                                             </td>
