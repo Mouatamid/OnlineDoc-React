@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../../assets/img/logo.png'
 
 function UnauthenticatedHeader({setCloseAction}) {
 
@@ -16,13 +15,13 @@ function UnauthenticatedHeader({setCloseAction}) {
 						</span>
 					</Link>
 					<Link to="/" className="navbar-brand logo">
-						<img src={logo} className="img-fluid" alt="Logo" />
+						<span style={{fontSize: "40px", fontWeight: "bold", color: "#15558d"}}>OnlineDoc</span>
 					</Link>
 				</div>
 				<div className="main-menu-wrapper">
 					<div className="menu-header">
 						<Link to="/" className="menu-logo" onClick={() => setCloseAction(true)}>
-							<img src={logo} className="img-fluid" alt="Logo" />
+							<span style={{fontSize: "40px", fontWeight: "bold", color: "#15558d"}}>OnlineDoc</span>
 						</Link>
 						<Link id="menu_close" className="menu-close" to="#" onClick={() => setCloseAction(false)}>
 							<i className="fas fa-times"></i>
